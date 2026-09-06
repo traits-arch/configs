@@ -1,0 +1,160 @@
+{
+    "custom/arch": {
+        "format": "󰮤",
+        "tooltip": true,
+        "tooltip-format": "Fedora Btw",
+        "on-click":"alacritty -e fastfetch"
+    },
+    "niri/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "urgent": "",
+            "active": "",
+            "default": ""
+        }
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 Muted",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-bluetooth_muted": " Muted",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "scroll-step": 5
+    },
+    "network": {
+        "format-wifi": " {essid}{signalStrength}%",
+        "format-alt": " {signalStrenght}",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected":"Disconnected ⚠",
+        //"on-click": "mode",
+        "on-click": "nm-connection-editor"
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": true,
+        "tooltip-format": "<b>Total Usage: {usage}%</b>\n<tt>─────────────────────────────</tt>\n<tt>Core 0: {usage0}%  │ Core 8:  {usage8}%\nCore 1: {usage1}%  │ Core 9:  {usage9}%\nCore 2: {usage2}%  │ Core 10: {usage10}%\nCore 3: {usage3}%  │ Core 11: {usage11}%\nCore 4: {usage4}%  │ Core 12: {usage12}%\nCore 5: {usage5}%  │ Core 13: {usage13}%\nCore 6: {usage6}%  │ Core 14: {usage14}%\nCore 7: {usage7}%  │ Core 15: {usage15}%</tt>",
+        "on-click-right": "~/scripts/cycle_tuned.sh",
+        "on-click": "alacritty -e htop --sort-key=PERCENT_CPU"
+    },
+    "memory": {
+        "format": " {}%",
+        "tooltip": true,
+        "on-click": "alacritty -e htop --sort-key PERCENT_MEM"
+    },
+    "temperature": {
+        "interval": 10,
+        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
+        "critical-threshold": 100,
+        "format-critical": " {temperatureC}",
+        "format": " {temperatureC}°C"
+    },
+    "niri/window": {
+        "format": "{app_id}",
+        "icon": false,
+        "max-length": 30,
+        "icon-size": 12
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging":" {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time}{icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "clock": {
+        "format": "{:%I:%M |%e %B} ",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%I:%M}",
+        "calendar": {
+        "mode": "month",
+        "mode-mon-col": 3,
+        "weeks-pos": "right",
+        "on-scroll": 1,
+        "format": {
+            "months": "<span color='#ffffff'><b>{}</b></span>",
+            "weeks": "<span color='#dedad9'><b>W{}</b></span>",
+            "weekdays": "<span color='#8a8787'><b>{}</b></span>",
+            "today": "<span color='#FFFFCC'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+    "actions": {
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "",
+            "none": "",
+            "dnd-notification": "",
+            "dnd-none": "",
+            "inhibited-notification": "",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "sleep 0.1 && swaync-client -t -sw",
+        "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+        "escape": true
+    },
+    "custom/media": {
+        "format": "{text}",
+        "max-length": 40,
+        //"format-icons": {
+        //      "spotify":" ",
+        //      "default":"🎜 ",
+        //      "youtube": "󰗃 "
+        //},
+        "interval": 1,
+        "tooltip": true,
+        //"exec": "python3 ~/scripts/media.py",
+       	"escape": true,
+        "exec": "if playerctl status 2>/dev/null | grep -q 'Playing'; then URL=$(playerctl metadata xesam:url 2>/dev/null); TITLE=$(playerctl metadata title 2>/dev/null); ICON=\"󰈹\"; [[ \"$URL\" =~ youtube || \"$TITLE\" =~ YouTube ]] && ICON=\"󰗃\"; [[ \"$URL\" =~ reddit || \"$TITLE\" =~ Reddit ]] && ICON=\"󰑍\"; [[ \"$URL\" =~ spotify || \"$TITLE\" =~ Spotify ]] && ICON=\"\"; echo \"$ICON $(playerctl metadata --format '{{artist}} - {{title}}' 2>/dev/null)\"; else echo \"$(niri msg -j focused-window 2>/dev/null | jq -r '.app_id // empty')\"; fi",
+        "on-click": "playerctl play-pause",
+        "on-click-right": "~/scripts/spotify.sh",
+        "smooth-scrolling-threshold": 20.0,
+        "on-scroll-left": "playerctl previous",
+        "on-scroll-right": "playerctl next",
+        "on-scroll-up": "~/scripts/planner.sh up",
+        "on-scroll-down": "~/scripts/planner.sh down"
+    },
+    "backlight": {
+        "device": "amdgpu_bl1",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    }
+}
