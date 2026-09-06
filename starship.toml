@@ -1,0 +1,37 @@
+# ~/.config/starship.toml
+
+# Clean curved multi-line frame layout
+format = """
+╭─$directory$git_branch$git_status
+╰─$character"""
+
+# Added a trailing space here to stop Alacritty from clipping the right edge of the timer
+right_format = """$cmd_duration """
+
+[directory]
+# Completely self-contained capsule pill
+format = "[](fg:#2C2C2C)[$path](bg:#2C2C2C fg:#FFFFFF)[](fg:#2C2C2C) "
+truncation_length = 3
+truncate_to_repo = false
+
+[git_branch]
+# Starts the git pill securely with a clean matching background
+format = "[](fg:#444444)[ $branch](bg:#444444 fg:#FFFFFF)"
+
+[git_status]
+# Merges seamlessly inside the same git pill background, replacing the red [!] with a clean styling
+format = "[[ $all_status$ahead_behind](bg:#444444 fg:#FF6B6B)[](fg:#444444)]($style)"
+style = "bg:#444444"
+modified = "!"
+untracked = "?"
+staged = "+"
+
+[cmd_duration]
+min_time = 500
+# Isolated capsule pill that will no longer clip against the screen wall
+format = "[](fg:#E0E0E0)[   $duration](bg:#E0E0E0 fg:#000000)[](fg:#E0E0E0)"
+show_milliseconds = false
+
+[character]
+success_symbol = "[ ❯ ](bold fg:#FFFFFF)"
+error_symbol = "[ ❯ ](bold fg:#FF5555)"

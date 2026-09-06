@@ -1,0 +1,314 @@
+@define-color text        #e8e8e8;
+@define-color text-hover  #101010;
+@define-color bg          #101010;
+@define-color bg-alt      rgba(255, 255, 255, 0.07);
+@define-color bg-sec      rgba(255, 255, 255, 0.045);
+@define-color border      rgba(255, 255, 255, 0.10);
+@define-color hover       #ffffff;
+@define-color selected    rgba(255, 255, 255, 0.85);
+
+* {
+  font-family: "JetBrains Mono Nerd Font 10";
+  font-size: 14px;
+  color: @text;
+  transition: 180ms ease-in-out;
+}
+
+.blank-window {
+  background: transparent;
+}
+
+.control-center {
+  background: rgba(12, 12, 12, 0.90);
+  border-radius: 26px;
+  border: 1px solid @border;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.55);
+  margin: 16px;
+  padding: 10px;
+}
+
+/* Extra breathing room for the list, purely spacing — the card look
+   itself comes from notifications.css so this doesn't fight it. */
+.control-center .notification-row {
+  margin: 6px 4px;
+}
+
+/* No visible scrollbar in the notification list */
+.control-center scrollbar {
+  opacity: 0;
+  background: transparent;
+  min-width: 0;
+}
+
+.control-center scrollbar slider {
+  background: transparent;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* WIDGETS ---------------------------------------------------------------- */
+.widget-title {
+  font-size: 1.15em;
+  margin: 10px 8px 6px 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.widget-title button {
+  all: unset;
+  background: @bg-alt;
+  border-radius: 10px;
+  padding: 4px 16px;
+  font-size: 0.8rem;
+  margin: 0px;
+  transition: 180ms ease-in-out;
+}
+
+.widget-title button:hover {
+  background: rgba(255, 255, 255, 0.85);
+  color: #000000;
+  border-radius: 10px;
+}
+
+.widget-title button:hover * {
+  background: transparent;
+  color: #000000;
+}
+
+.widget-title button:active {
+  background-color: @selected;
+  color: @text-hover;
+}
+
+/* Do not disturb */
+.widget-dnd {
+  margin: 4px 8px 10px 8px;
+  font-size: 1rem;
+}
+
+.widget-dnd > switch {
+  background: @bg-alt;
+  font-size: initial;
+  border-radius: 10px;
+  box-shadow: none;
+  padding: 2px;
+  min-width: 44px;
+}
+
+.widget-dnd > switch:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.widget-dnd > switch:checked {
+  background: @hover;
+}
+
+.widget-dnd > switch slider {
+  background: @text;
+  border-radius: 8px;
+}
+
+.widget-dnd > switch:checked slider {
+  background: @text-hover;
+}
+
+.widget-label {
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+}
+
+/* Buttons grid */
+.widget-buttons-grid {
+  font-size: x-large;
+  padding: 8px 6px;
+  margin: 0px 8px 6px 8px;
+  border-radius: 20px;
+  background: @bg-alt;
+}
+
+/* Reset the flowboxchild wrapper itself — GTK gives flowboxchild its own
+   hover/selected background by default, which was layering underneath
+   the button's custom hover and causing the "two hover effects" /
+   uneven look (the wrapper's box didn't match the button's box exactly). */
+.widget-buttons-grid > flowbox > flowboxchild {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild:hover,
+.widget-buttons-grid > flowbox > flowboxchild:selected,
+.widget-buttons-grid > flowbox > flowboxchild:focus,
+.widget-buttons-grid > flowbox > flowboxchild:active {
+  background: transparent;
+  box-shadow: none;
+  outline: none;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  all: unset;
+  margin: 10px;
+  padding: 0px;
+  min-width: 48px;
+  min-height: 48px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  transition: 180ms ease-in-out;
+}
+
+/* Single, consistent hover/focus/active state — using the same translucent
+   @bg-alt tone as the rest of the UI (instead of solid white) so it reads
+   as "permanently transparent" rather than flashing to a solid fill.
+   :active/:selected/:focus are all folded into the same rule so nothing
+   is left in a different-looking state after a click. Added .toggle:checked 
+   to keep active state toggle buttons lit. */
+.widget-buttons-grid > flowbox > flowboxchild > button:hover,
+.widget-buttons-grid > flowbox > flowboxchild > button:focus,
+.widget-buttons-grid > flowbox > flowboxchild > button:active,
+.widget-buttons-grid > flowbox > flowboxchild > button:selected,
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+  background: @selected;
+  color: @text-hover;
+  border-radius: 14px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover *,
+.widget-buttons-grid > flowbox > flowboxchild > button:focus *,
+.widget-buttons-grid > flowbox > flowboxchild > button:active *,
+.widget-buttons-grid > flowbox > flowboxchild > button:selected *,
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked * {
+  background: transparent;
+  color: @text-hover;
+}
+
+/* Music player */
+.widget-mpris {
+  background: transparent;
+  border-radius: 20px;
+  color: @text;
+  margin: 6px 8px;
+  padding: 0;
+}
+
+.widget-mpris-player {
+  background: transparent;
+  border-radius: 18px;
+  padding: 10px 14px;
+  margin: 2px;
+}
+
+/* Blurred album-art background */
+picture.mpris-background {
+  opacity: 0.75;
+  border-radius: 20px;
+}
+
+.widget-mpris > box > button {
+  color: @text;
+  background: transparent;
+  border-radius: 20px;
+}
+
+.widget-mpris button {
+  color: rgba(255, 255, 255, 0.6);
+  background: transparent;
+}
+
+.widget-mpris button:hover {
+  color: @hover;
+  background: transparent;
+}
+
+.widget-mpris-album-art {
+  border-radius: 14px;
+}
+
+.widget-mpris-title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.widget-mpris-subtitle {
+  font-weight: 500;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+picture.widget-mpris-album-art,
+.widget-mpris-album-art picture {
+  border-radius: 14px;
+}
+
+/* Belt-and-braces: some GTK/swaync builds render the album art as a
+   plain GtkPicture that ignores its own border-radius. Clipping the
+   parent (above) is what actually rounds it; this just keeps the
+   radius consistent if that ever changes. */
+picture.widget-mpris-album-art,
+.widget-mpris-album-art picture {
+  border-radius: 14px;
+}
+
+/* Volume */
+.widget-volume {
+  background: @bg-sec;
+  color: @text;
+  padding: 6px 8px;
+  margin: 8px;
+  border-radius: 14px;
+}
+
+/* Brightness — matches volume's styling exactly */
+.widget-backlight {
+  background: @bg-sec;
+  color: @text;
+  padding: 8px 10px;
+  margin: 8px;
+  border-radius: 14px;
+}
+
+progressbar,
+progress,
+trough {
+  border-radius: 12px;
+}
+
+progressbar {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.widget-volume slider,
+.widget-backlight slider {
+  background-color: #ffffff;
+  border: none;
+  box-shadow: none;
+  border-radius: 50%;
+  min-width: 16px;
+  min-height: 16px;
+}
+.widget-mpris-player,
+.widget-mpris-player > box {
+    background: transparent ;
+    background-color: transparent;
+    box-shadow: none ;
+    border: none ;
+}
+
+/* Keep the blurred album-art background */
+picture.mpris-background {
+    opacity: 0.75;
+    background: transparent;
+}
+.widget-mpris .mpris-background {
+    filter: blur(10px);
+    opacity: 0.75;
+}
+
+/* Remove the dark glass overlay */
+.widget-mpris .mpris-overlay {
+    background: transparent;
+    border-radius: 18px;
+}
