@@ -3,7 +3,7 @@
         "format": "󰮤",
         "tooltip": true,
         "tooltip-format": "Fedora Btw",
-        "on-click":"alacritty -e fastfetch"
+        "on-click":"alacritty -e /home/xal/.config/rofi/powermenu/type-4/powermenu.sh"
     },
     "niri/workspaces": {
         "disable-scroll": true,
@@ -135,9 +135,9 @@
         "format": "{text}",
         "max-length": 40,
         "interval": 1,
-        "tooltip": true,
+        "tooltip": false,
        	"escape": true,
-        "exec": "if playerctl status 2>/dev/null | grep -q 'Playing'; then URL=$(playerctl metadata xesam:url 2>/dev/null); TITLE=$(playerctl metadata title 2>/dev/null); ICON=\"󰈹\"; [[ \"$URL\" =~ youtube || \"$TITLE\" =~ YouTube ]] && ICON=\"󰗃\"; [[ \"$URL\" =~ reddit || \"$TITLE\" =~ Reddit ]] && ICON=\"󰑍\"; [[ \"$URL\" =~ spotify || \"$TITLE\" =~ Spotify ]] && ICON=\"\"; echo \"$ICON $(playerctl metadata --format '{{artist}} - {{title}}' 2>/dev/null)\"; else echo \"$(niri msg -j focused-window 2>/dev/null | jq -r '.app_id // empty')\"; fi",
+        "exec": "if playerctl status 2>/dev/null | grep -q 'Playing'; then URL=$(playerctl metadata xesam:url 2>/dev/null); TITLE=$(playerctl metadata title 2>/dev/null); ICON=\"󰈹\"; [[ \"$URL\" =~ youtube || \"$TITLE\" =~ YouTube ]] && ICON=\"󰗃\"; [[ \"$URL\" =~ reddit || \"$TITLE\" =~ Reddit ]] && ICON=\"󰑍\"; [[ \"$URL\" =~ spotify || \"$TITLE\" =~ Spotify ]] && ICON=\"\"; [[ \"$URL\" =~ monochrome || \"$TITLE\" =~ Monochrome ]] && ICON=\"\"; echo \"$ICON $(playerctl metadata --format '{{artist}} - {{title}}' 2>/dev/null)\"; else echo \"$(niri msg -j focused-window 2>/dev/null | jq -r '.app_id // empty')\"; fi",
         "on-click": "playerctl play-pause",
         "on-click-right": "~/scripts/mono.sh",
         "smooth-scrolling-threshold": 20.0,
