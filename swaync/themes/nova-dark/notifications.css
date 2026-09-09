@@ -1,0 +1,196 @@
+/* =========================================================================
+   Nova Monochrome — notifications.css
+   Shared notification-card styling.
+   IMPORTANT: these rules are intentionally UNSCOPED (no ".control-center"
+   prefix) so they apply to the floating popup window as well as the list
+   inside the control center. Scoping them to ".control-center" (as before)
+   meant popups never received any custom styling at all.
+   ========================================================================= */
+
+@define-color text        #e8e8e8;
+@define-color text-dim    rgba(232, 232, 232, 0.55);
+@define-color text-hover  #101010;
+@define-color bg          rgba(16, 16, 16, 0.90);
+@define-color bg-alt      rgba(255, 255, 255, 0.07);
+@define-color bg-sec      rgba(255, 255, 255, 0.04);
+@define-color border      rgba(255, 255, 255, 0.10);
+@define-color hover       #ffffff;
+@define-color selected    rgba(255, 255, 255, 0.85);
+@define-color urgent      #ffffff;
+
+/* Scoped, safe reset. NOTE: no "* { all: unset; }" here.
+   Under cssPriority:user, "all: unset" on the universal selector beats
+   swaync's built-in row/list spacing regardless of specificity — that's
+   what was collapsing every row to zero height and stacking the text. */
+* {
+  font-family: "JetBrains Mono Nerd Font 10";
+  font-size: 14px;
+  color: @text;
+  transition: 180ms ease-in-out;
+}
+
+.blank-window {
+  background: transparent;
+}
+
+.notification-window {
+  background: transparent;
+}
+
+/* Safety net: if swaync's floating-popup surface uses a top-level window
+   we haven't targeted by class, this catches it. If the gray backdrop
+   persists after this, it's likely a compositor/layer-shell alpha issue
+   (niri not compositing transparency for this surface) rather than CSS. */
+window {
+  background: transparent;
+}
+
+/* ---- the row itself: just spacing, no visuals ---- */
+.notification-row {
+  outline: none;
+  background: transparent;
+  margin: 6px 12px;
+  padding: 0;
+}
+
+.notification-row:first-child {
+  margin-top: 10px;
+}
+
+/* ---- the actual card ---- */
+.notification-background {
+  background-color: @bg;
+  border: 1px solid @border;
+  border-radius: 20px;
+  padding: 2px;
+  min-height: 64px;
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.35);
+}
+
+.notification {
+  background: transparent;
+  border-radius: 20px;
+  padding: 6px;
+}
+
+.notification.critical {
+  color: @urgent;
+  border: 1px solid @urgent;
+  border-radius: 20px;
+}
+
+.notification-content {
+  margin: 4px 6px;
+  padding: 4px 2px;
+}
+
+.notification-default-action {
+  border-radius: 16px;
+}
+
+.notification-default-action:hover {
+  background: @bg-alt;
+}
+
+.summary {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.time {
+  color: @text-dim;
+  font-size: 0.72rem;
+}
+
+.body {
+  color: @text-dim;
+  font-size: 0.85rem;
+}
+
+.notification-action {
+  background: @bg-alt;
+  color: @text;
+  border-radius: 12px;
+  margin: 6px 4px 2px 4px;
+  padding: 6px 4px;
+}
+
+.notification-action:hover {
+  background: @hover;
+  color: @text-hover;
+}
+
+.notification-action:active {
+  background-color: @selected;
+  color: @text-hover;
+}
+
+.close-button {
+  background: transparent;
+  color: @text-dim;
+  border-radius: 8px;
+  margin: 4px;
+  padding: 4px;
+}
+
+.close-button:hover {
+  background-color: @bg-alt;
+  color: @text;
+}
+
+progressbar,
+progress,
+trough {
+  border-radius: 12px;
+}
+
+progressbar {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+progress {
+  background-color: @hover;
+}
+
+/* ---- expanded notification groups ---- */
+/* Kill the default group panel entirely — we only want each individual
+   card's own rounded corners, no outer frame wrapping the group. */
+.notification-group {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 10px 12px 4px 12px;
+}
+
+.notification-group > * {
+  background: transparent;
+  box-shadow: none;
+}
+
+.notification-group-headers {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  color: @text-dim;
+}
+
+.notification-group-icon {
+  color: @text-dim;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+  background: transparent;
+  color: @text-dim;
+  border-radius: 8px;
+  margin: 2px;
+  padding: 4px;
+}
+
+.notification-group-collapse-button:hover,
+.notification-group-close-all-button:hover {
+  background: @bg-alt;
+  color: @text;
+}

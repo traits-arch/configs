@@ -1,0 +1,124 @@
+/*****----- Configuration -----*****/
+configuration {
+    show-icons:                 false;
+}
+
+/*****----- Global Properties -----*****/
+* {
+    /* Resolution : 1920x1080 */
+    mainbox-spacing:             80px;
+    mainbox-margin:              100px 220px;
+    message-margin:              0px 420px;
+    message-padding:             22px 16px;
+    message-border-radius:       100px;
+    listview-spacing:            25px;
+    element-padding:             18px 24px;
+    element-border-radius:       100px;
+
+    prompt-font:                 "JetBrains Mono Nerd Font Bold Italic 56";
+    textbox-font:                "JetBrains Mono Nerd Font 13";
+    element-text-font:           "feather 30";
+
+    /* Wallpaper with a dark tint overlay */
+    background-window:           rgba(15, 15, 15, 0.65);
+    background-normal:           rgba(20, 20, 20, 0.85);
+    background-selected:         rgba(255, 255, 255, 0.8);
+    foreground-normal:           #FFFFFF;
+    foreground-selected:         #000000;
+}
+
+/*****----- Main Window -----*****/
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  true;
+    cursor:                      "default";
+    background-color:            var(background-window);
+    background-image:            url("/home/xal/Downloads/image.png", height);
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     var(mainbox-spacing);
+    margin:                      var(mainbox-margin);
+    background-color:            transparent;
+    children:                    [ "dummy", "inputbar", "listview", "message", "dummy" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    background-color:            transparent;
+    children:                    [ "dummy", "prompt", "dummy"];
+}
+
+dummy {
+    background-color:            transparent;
+}
+
+prompt {
+    enabled:                     true;
+    font:                        var(prompt-font);
+    background-color:            transparent;
+    text-color:                  #000000;
+}
+
+/*****----- Message -----*****/
+message {
+    enabled:                     true;
+    margin:                      var(message-margin);
+    padding:                     var(message-padding);
+    border-radius:               var(message-border-radius);
+    background-color:            rgba(20, 20, 20, 0.85);
+    text-color:                  rgba(20, 20, 20, 0.85);
+}
+textbox {
+    font:                        var(textbox-font);
+    background-color:            transparent;
+    text-color:                  #FFFFFF;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    expand:                      false;
+    columns:                     5;
+    lines:                       1;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     var(listview-spacing);
+    background-color:            transparent;
+    cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    padding:                     var(element-padding);
+    border-radius:               var(element-border-radius);
+    background-color:            var(background-normal);
+    text-color:                  var(foreground-normal);
+    cursor:                      pointer;
+}
+element-text {
+    font:                        var(element-text-font);
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.42;
+    horizontal-align:            0.5;
+}
+element selected.normal {
+    background-color:            var(background-selected);
+    text-color:                  var(foreground-selected);
+}

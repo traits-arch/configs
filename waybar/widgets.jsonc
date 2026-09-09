@@ -1,0 +1,36 @@
+{
+    "layer": "bottom", 
+    "position": "left", 
+    "margin-left": 60,   /* Spaces it away from the left screen edge */
+    "margin-top": 120,  /* Clears room below your top Waybar panel */
+    "width": 280,
+    "spacing": 10,
+    "modules-left": [
+        "custom/notion-header",
+        "custom/todo1",
+        "custom/todo2",
+        "custom/focus-timer"
+    ],
+
+    "custom/notion-header": {
+        "format": "⚔️ FOCUS WORKSPACE"
+    },
+
+    "custom/todo1": {
+        "exec": "sed -n '1p' ~/.config/waybar/todo.txt || echo 'No tasks!'",
+        "interval": 2,
+        "format": "{}"
+    },
+
+    "custom/todo2": {
+        "exec": "sed -n '2p' ~/.config/waybar/todo.txt || echo ''",
+        "interval": 2,
+        "format": "{}"
+    },
+
+    "custom/focus-timer": {
+        "exec": "cat ~/.config/waybar/focus-status.txt 2>/dev/null || echo 'START FOCUS MODE'",
+        "interval": 1,
+        "on-click": "~/.config/waybar/toggle-focus.sh"
+    }
+}

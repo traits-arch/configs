@@ -1,0 +1,41 @@
+/* Container Box */
+window#waybar {
+    background-color: rgba(10, 10, 10, 0.85); /* Pitch black with slight transparency */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border outline */
+    border-radius: 16px; /* Smooth rounded corners */
+    padding: 24px;
+    font-family: "JetBrains Mono", "Inter", sans-serif;
+    color: #ffffff; /* Crisp white text */
+}
+
+/* Header style */
+#custom-notion-header {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #ff3333; /* Crimson accent line matching the red threads */
+    margin-bottom: 14px;
+}
+
+/* Individual list items */
+#custom-todo1, #custom-todo2 {
+    font-size: 13px;
+    color: #cccccc; /* Slightly muted white for readability */
+    padding: 6px 0;
+}
+
+/* Focus button box */
+#custom-focus-timer {
+    margin-top: 18px;
+    background-color: #ff3333; /* Bold red focus background block */
+    color: #ffffff; /* High contrast white text inside the button */
+    padding: 10px;
+    border-radius: 8px; /* Matching rounded corners inside */
+    font-size: 13px;
+    font-weight: 700;
+}
+
+#custom-focus-timer:hover {
+    background-color: #cc0000; /* Darker red on hover */
+}
