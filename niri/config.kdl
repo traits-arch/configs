@@ -207,7 +207,7 @@ binds {
     Mod+W { spawn "pkill" "-USR1" "waybar"; }
     
     Mod+Grave { spawn "alacritty" "--class" "scratchpad" "-e" "env" "SKIP_FETCH=1" "zsh" ; }
-    Mod+ALt+Space { spawn "sh" "-c" "niri msg action move-column-to-last-position && niri msg action focus-column-left"; } 
+    Mod+ALt+Space { spawn "sh" "-c" "niri msg action move-column-to-last && sleep 1 && niri msg action focus-window-previous"; } 
     // --- Navigation (Focus) ---
     Mod+Left  { focus-column-left; }
     Mod+Right { focus-column-right; }
@@ -215,6 +215,7 @@ binds {
     Mod+Up    { focus-window-up; }
     Mod+I    { set-window-height "-10%"; }
     Mod+K  { set-window-height "+10%"; }
+    Mod+R  { focus-window-previous; }
 
     // --- Moving Windows ---
     Mod+Shift+Left  { move-column-left; }
