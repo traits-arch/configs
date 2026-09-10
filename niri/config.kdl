@@ -134,8 +134,7 @@ window-rule {
     opacity 0.90
     background-effect {
         blur true
-        xray false          // Optional: set to true to ignore overlapping windows
-                  // Optional: reduces color banding
+        xray true
     }
 }
 window-rule {
