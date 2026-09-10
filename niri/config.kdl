@@ -131,8 +131,12 @@ window-rule {
     geometry-corner-radius 22
     clip-to-geometry true
     draw-border-with-background false
-    opacity 0.95
-    
+    opacity 0.90
+    background-effect {
+        blur true
+        xray false          // Optional: set to true to ignore overlapping windows
+                  // Optional: reduces color banding
+    }
 }
 window-rule {
     match app-id="scratchpad"
