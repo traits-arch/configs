@@ -1,0 +1,35 @@
+/* Use the black theme from the store for firefox
+Firefox URL bar / search suggestions styling */
+#urlbar .urlbarView-body,
+.urlbarView {
+    background-color: #000000 !important;
+    color: #000000 !important;
+}
+
+.urlbarView-row {
+    color: #ffffff !important;
+}
+
+.urlbarView-row[selected] {
+    background-color: #404040 !important;
+    color: #ffffff !important;
+}
+#urlbar-background,
+#urlbar-input-container {
+          background-color: #000000 !important;
+}
+#TabsToolbar {
+  visibility: collapse !important;
+}
+/* hide the bar */
+#navigator-toolbox {
+  margin-top: -78px;
+  transition: margin-top 0.15s ease-in-out !important;
+  z-index: 100;
+}
+
+/* 3. show the bar when hovered*/
+#navigator-toolbox:hover,
+#navigator-toolbox:focus-within {
+  margin-top: 0px !important;
+}
