@@ -1,0 +1,41 @@
+{
+    "git.path": "/usr/bin/git",
+    "workbench.colorCustomizations": {
+        // Pitch black editor panel and windows
+        "editor.background": "#101010",
+        "sideBar.background": "#101010",
+        "activityBar.background": "#111214",
+        "editorGutter.background": "#101010",
+        "tabsContainer.background": "#101010",
+        "statusBar.background": "#101010",
+        "titleBar.activeBackground": "#101010",
+
+        // Dim white and grey panel elements
+        "activityBar.foreground": "#7f7f7f",
+        "activityBar.inactiveForeground": "#333333",
+        "sideBar.foreground": "#a6a6a6",
+        "sideBarSectionHeader.foreground": "#7f7f7f",
+        "tab.activeForeground": "#e5e5e5",
+        "tab.inactiveForeground": "#666666",
+        "tab.activeBackground": "#000000",
+        "tab.inactiveBackground": "#000000",
+        "tab.border": "#1a1a1a",
+        "lineHighlight.background": "#0d0d0d",
+        "editorLineNumber.foreground": "#4d4d4d",
+        "editorLineNumber.activeForeground": "#a6a6a6",
+        "statusBar.foreground": "#7f7f7f"
+    },
+    "editor.tokenColorCustomizations": {},
+    "window.menuBarVisibility": "compact",
+    "workbench.statusBar.visible": false,
+    "update.titleBar": false,
+    "workbench.settings.showAISearchToggle": false,
+    "window.commandCenter": false,
+    "chat.titleBar.openInAgentsWindow.enabled": false,
+    "workbench.layoutControl.enabled": false,
+    "workbench.browser.showInTitleBar": false,
+    "window.titleBarStyle": "custom",
+    "custom-ui-style.electron": {
+          "frame": false
+    }
+}

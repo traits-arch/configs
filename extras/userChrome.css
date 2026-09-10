@@ -23,7 +23,7 @@ Firefox URL bar / search suggestions styling */
 }
 /* hide the bar */
 #navigator-toolbox {
-  margin-top: -78px;
+  margin-top: -75px;
   transition: margin-top 0.15s ease-in-out !important;
   z-index: 100;
 }

@@ -46,7 +46,7 @@ layout {
     // Focus Ring (black)
     focus-ring {
         width 4
-        active-color "#121212"
+        active-color "#333232"
         inactive-color "#FFFFFF"
         
     }
@@ -148,7 +148,6 @@ window-rule {
 }
 window-rule {
     match app-id="^Alacritty$"
-    match app-id="code"
     draw-border-with-background false
     min-width 0
     opacity 1.0
