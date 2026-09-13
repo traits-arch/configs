@@ -1,3 +1,15 @@
+<img width="1920" height="1200" alt="Home" src="https://github.com/user-attachments/assets/9525b482-341c-411b-a169-1f66aeb28dc5" />
+
+<img width="1916" height="1200" alt="Terminal" src="https://github.com/user-attachments/assets/1e2c3c3c-78d7-44c8-94c4-3c5468385875" />
+
+<img width="1920" height="1200" alt="play" src="https://github.com/user-attachments/assets/dfe19341-345d-4234-bebc-837cc9eb7653" />
+
+<img width="1918" height="1200" alt="Vscode" src="https://github.com/user-attachments/assets/62e2c87a-7fa3-4ed5-9212-3a21eb63eb99" />
+
+<img width="1920" height="1200" alt="Thunar" src="https://github.com/user-attachments/assets/d550522e-a366-48b6-bfea-a820cf6acb3b" />
+
+<img width="1920" height="1200" alt="Workspaces" src="https://github.com/user-attachments/assets/3f9af695-13fb-43b0-8a6e-b571eb714bf0" />
+
 1.Install Niri First
 
 2.Replace the config.kdl file with the Cloned repo one
