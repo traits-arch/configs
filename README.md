@@ -28,3 +28,5 @@
 the starship.toml is customizable, everything is. just replace the colours with colours of your own choice.
 
 15.I'll be working on upgrading overall with time, stay tuned.
+
+Update: Powermenu is setup
