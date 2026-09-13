@@ -161,6 +161,10 @@ window-rule {
     opacity 0.90
     geometry-corner-radius 22	
     open-floating true
+    background-effect {
+        blur true
+        xray true
+    }
 }
 
 recent-windows {   
@@ -175,7 +179,7 @@ hotkey-overlay {
 }
 
 //Spawn at startup
-//spawn-at-startup "sh" "-c" "sleep 2 && hypridle"
+spawn-at-startup "sh" "-c" "sleep 1 && hypridle"
 spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
 spawn-at-startup "swaybg" "-m" "fill" "-i" "/home/xal/Downloads/wallhaven-0we3m7_1920x1200.png"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
@@ -246,7 +250,7 @@ binds {
     Mod+Shift+E { quit; }
     //inbuilt commands
     // Volume keys
-    XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+    XF86AudioRaiseVolume repeat=false { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
     XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
     XF86AudioMute        { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }

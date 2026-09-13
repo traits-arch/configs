@@ -7,13 +7,11 @@ configuration {
 * {
     /* Resolution : 1920x1080 */
     mainbox-spacing:             80px;
-    mainbox-margin:              100px 220px;
-    message-margin:              0px 420px;
+    mainbox-margin:              180px 220px;
+    message-margin:              36px 420px;
     message-padding:             22px 16px;
     message-border-radius:       100px;
-    listview-spacing:            25px;
-    element-padding:             18px 24px;
-    element-border-radius:       100px;
+    listview-spacing:            60px;
 
     prompt-font:                 "JetBrains Mono Nerd Font Bold Italic 56";
     textbox-font:                "JetBrains Mono Nerd Font 13";
@@ -35,7 +33,7 @@ window {
     fullscreen:                  true;
     cursor:                      "default";
     background-color:            var(background-window);
-    background-image:            url("/home/xal/Downloads/image.png", height);
+    background-image:            url("/home/xal/.config/rofi/powermenu/type-4/image.png", height);
 }
 
 /*****----- Main Box -----*****/
@@ -95,7 +93,8 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
-    
+    width:                       500px;
+    margin:                      40px 80px;
     spacing:                     var(listview-spacing);
     background-color:            transparent;
     cursor:                      "default";
@@ -104,8 +103,10 @@ listview {
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    padding:                     var(element-padding);
-    border-radius:               var(element-border-radius);
+    expand:                      false;
+    spacing:                     0px;
+    padding:                     60px 20px;
+    border-radius:               200%;
     background-color:            var(background-normal);
     text-color:                  var(foreground-normal);
     cursor:                      pointer;
