@@ -18,6 +18,9 @@
     },
     "idle_inhibitor": {
         "format": "{icon}",
+        "on-click-right": "pkill swaybg; swaybg -c '#000000' &",
+        "on-scroll-right": "~/scripts/wall.sh",
+        "smooth-scrolling-threshold": 20.0,
         "format-icons": {
             "activated": "",
             "deactivated": ""
