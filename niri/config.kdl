@@ -140,6 +140,7 @@ window-rule {
 window-rule {
     match app-id="scratchpad"
     open-floating true
+    opacity 1.0
     default-floating-position x=20 y=30 relative-to="top-left"
     // Sets the window size (e.g. 50% width, 40% height)
     default-column-width { proportion 0.4; }
