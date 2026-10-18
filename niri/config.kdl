@@ -167,6 +167,16 @@ window-rule {
         xray true
     }
 }
+window-rule {
+    match app-id="com-music-bitchord-desktop-MainKt"
+    opacity 0.90
+    geometry-corner-radius 22
+    open-floating true
+    background-effect {
+        blur true
+        xray true
+    }
+}
 
 recent-windows {   
        highlight {

@@ -1,0 +1,66 @@
+2026-09-30 12:49:17,739 - music_cli.platform.ipc - INFO - Unix socket server started at /home/xal/.config/music-cli/music-cli.sock
+2026-09-30 12:49:17,739 - __main__ - INFO - Daemon started, listening on /home/xal/.config/music-cli/music-cli.sock
+2026-09-30 12:49:17,810 - music_cli.player.ffplay - INFO - Starting playback: https://streams.ilovemusic.de/iloveradio1.mp3
+2026-09-30 12:51:52,134 - music_cli.player.ffplay - INFO - Starting playback: Eclipse
+2026-09-30 12:52:46,408 - music_cli.player.ffplay - INFO - Starting playback: http://ice1.somafm.com/defcon-128-mp3
+2026-09-30 12:54:36,647 - music_cli.player.ffplay - INFO - Volume set to 0% (applies to next track)
+2026-09-30 22:27:49,155 - __main__ - INFO - Stopping daemon...
+2026-09-30 22:27:49,156 - __main__ - INFO - Daemon stopped
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/xal/.local/lib/python3.14/site-packages/music_cli/daemon.py", line 459, in <module>
+    run_daemon()
+    ~~~~~~~~~~^^
+  File "/home/xal/.local/lib/python3.14/site-packages/music_cli/daemon.py", line 281, in run_daemon
+    asyncio.run(daemon.start())
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/asyncio/runners.py", line 205, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/usr/lib64/python3.14/asyncio/runners.py", line 128, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib64/python3.14/asyncio/base_events.py", line 720, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/home/xal/.local/lib/python3.14/site-packages/music_cli/daemon.py", line 141, in start
+    await self._ipc_server.serve_forever()
+  File "/home/xal/.local/lib/python3.14/site-packages/music_cli/platform/ipc.py", line 62, in serve_forever
+    await self._server.serve_forever()
+  File "/usr/lib64/python3.14/asyncio/base_events.py", line 379, in serve_forever
+    await self._serving_forever_fut
+asyncio.exceptions.CancelledError
+2026-10-03 15:16:20,020 - music_cli.platform.ipc - INFO - Unix socket server started at /home/xal/.config/music-cli/music-cli.sock
+2026-10-03 15:16:20,020 - __main__ - INFO - Daemon started, listening on /home/xal/.config/music-cli/music-cli.sock
+2026-10-03 15:16:20,165 - music_cli.player.ffplay - INFO - Starting playback: https://streams.ilovemusic.de/iloveradio1.mp3
+2026-10-03 15:19:16,478 - music_cli.player.ffplay - INFO - Starting playback: https://streams.ilovemusic.de/iloveradio1.mp3
+2026-10-03 15:19:40,182 - music_cli.sources.ai_generator - INFO - AI music generation not available: No module named 'scipy'
+2026-10-03 15:19:55,632 - music_cli.player.ffplay - INFO - Starting playback: deftones
+2026-10-04 02:04:50,359 - __main__ - INFO - Stopping daemon...
+2026-10-04 02:04:50,359 - __main__ - INFO - Daemon stopped
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/xal/.local/lib/python3.14/site-packages/music_cli/daemon.py", line 459, in <module>
+    run_daemon()
+    ~~~~~~~~~~^^
+  File "/home/xal/.local/lib/python3.14/site-packages/music_cli/daemon.py", line 281, in run_daemon
+    asyncio.run(daemon.start())
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/asyncio/runners.py", line 205, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/usr/lib64/python3.14/asyncio/runners.py", line 128, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib64/python3.14/asyncio/base_events.py", line 720, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/home/xal/.local/lib/python3.14/site-packages/music_cli/daemon.py", line 141, in start
+    await self._ipc_server.serve_forever()
+  File "/home/xal/.local/lib/python3.14/site-packages/music_cli/platform/ipc.py", line 62, in serve_forever
+    await self._server.serve_forever()
+  File "/usr/lib64/python3.14/asyncio/base_events.py", line 379, in serve_forever
+    await self._serving_forever_fut
+asyncio.exceptions.CancelledError

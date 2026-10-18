@@ -1,0 +1,74 @@
+# Radio stations for music-cli
+# Add one URL per line. Lines starting with # are comments.
+# Format: URL or "name|URL"
+
+# ========== ENGLISH ==========
+
+# Chill/Lo-fi
+ChillHop|https://streams.ilovemusic.de/iloveradio17.mp3
+Groove Salad [SomaFM]|http://ice1.somafm.com/groovesalad-128-mp3
+Drone Zone [SomaFM]|http://ice1.somafm.com/dronezone-128-mp3
+Space Station Soma|http://ice1.somafm.com/spacestation-128-mp3
+Hirschmilch Chillout|http://hirschmilch.de:7000/chillout.mp3
+
+# Electronic
+Deep House|https://streams.ilovemusic.de/iloveradio14.mp3
+Anjunadeep Radio|https://www.youtube.com/watch?v=D4MdHQOILdw
+DEF CON Radio [SomaFM]|http://ice1.somafm.com/defcon-128-mp3
+Beat Blender [SomaFM]|http://ice1.somafm.com/beatblender-128-mp3
+
+# Pop/Hits
+Top Hits|https://streams.ilovemusic.de/iloveradio1.mp3
+80s Hits|https://streams.ilovemusic.de/iloveradio4.mp3
+
+# Rock
+Rock Radio|https://streams.ilovemusic.de/iloveradio3.mp3
+Metal [SomaFM]|http://ice1.somafm.com/metal-128-mp3
+
+# Synthwave/Retrowave
+Nightride FM|https://stream.nightride.fm/nightride.mp3
+Chillsynth FM|https://stream.nightride.fm/chillsynth.mp3
+Darksynth FM|https://stream.nightride.fm/darksynth.mp3
+Datawave FM|https://stream.nightride.fm/datawave.mp3
+Spacesynth FM|https://stream.nightride.fm/spacesynth.mp3
+
+# Jazz
+Jazz [SomaFM]|http://ice1.somafm.com/secretagent-128-mp3
+
+# Classical
+Classical|http://stream.srg-ssr.ch/m/rsc_de/mp3_128
+BBC Radio 3|http://stream.live.vc.bbcmedia.co.uk/bbc_radio_three
+
+# ========== FRENCH ==========
+
+# French Pop
+FIP Radio|http://icecast.radiofrance.fr/fip-midfi.mp3
+France Inter|http://icecast.radiofrance.fr/franceinter-midfi.mp3
+France Musique|http://icecast.radiofrance.fr/francemusique-midfi.mp3
+FIP Rock|http://icecast.radiofrance.fr/fiprock-midfi.mp3
+FIP Jazz|http://icecast.radiofrance.fr/fipjazz-midfi.mp3
+FIP Electro|http://icecast.radiofrance.fr/fipelectro-midfi.mp3
+Mouv|http://icecast.radiofrance.fr/mouv-midfi.mp3
+
+# ========== SPANISH ==========
+
+# Latin/Salsa
+Salsa Radio|http://157.230.221.44:2002/stream/1/
+Tropical 100 Salsa|http://tropical100.net:8008/stream/1/
+SalsaMexico|http://colombiawebs.com.co:8106/stream/1/
+Los 40 Principales|https://playerservices.streamtheworld.com/api/livestream-redirect/LOS40.mp3
+
+# Spanish Pop/Rock
+Radio Maria Spain|http://dreamsiteradiocp.com:8060/stream/1/
+Cadena SER|https://playerservices.streamtheworld.com/api/livestream-redirect/CADENASER.mp3
+
+# ========== ITALIAN ==========
+
+# Italian Radio
+Radio Italia|http://radioitalia.net/stream/1/
+RTL 102.5|http://streamingp.shoutcast.com/RTL1025?lang=*
+Radio 105|https://icecast.unitedradio.it/Radio105.mp3
+Virgin Radio Italy|https://icecast.unitedradio.it/Virgin.mp3
+Radio Deejay|https://icecast.unitedradio.it/RadioDeejay.mp3
+RDS Radio|http://stream.rds.it:8000/rds64k.mp3
+Radio Capital|https://icecast.unitedradio.it/Capital.mp3

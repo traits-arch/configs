@@ -1,0 +1,153 @@
+version = "0.11.0"
+
+[player]
+backend = "ffplay"
+volume = 80
+
+[daemon]
+socket_path = "~/.config/music-cli/music-cli.sock"
+pid_file = "~/.config/music-cli/music-cli.pid"
+
+[context]
+enabled = true
+use_ai = false
+
+[history]
+max_entries = 1000
+
+[youtube.cache]
+max_size_gb = 2.0
+enabled = true
+audio_format = "m4a"
+audio_quality = "192"
+
+[ai]
+default_model = "musicgen-small"
+
+[ai.cache]
+max_models = 2
+
+[ai.models.musicgen-small]
+hf_model_id = "facebook/musicgen-small"
+model_type = "musicgen"
+description = "Fast music generation, good quality"
+expected_size_gb = 2.0
+default_duration = 30
+max_duration = 60
+min_duration = 5
+tokens_per_second = 50
+enabled = true
+
+[ai.models.musicgen-medium]
+hf_model_id = "facebook/musicgen-medium"
+model_type = "musicgen"
+description = "Balanced speed and quality"
+expected_size_gb = 3.5
+default_duration = 30
+max_duration = 60
+min_duration = 5
+tokens_per_second = 50
+enabled = true
+
+[ai.models.musicgen-large]
+hf_model_id = "facebook/musicgen-large"
+model_type = "musicgen"
+description = "Best quality, slower generation"
+expected_size_gb = 7.0
+default_duration = 20
+max_duration = 45
+min_duration = 5
+tokens_per_second = 50
+enabled = true
+
+[ai.models.musicgen-melody]
+hf_model_id = "facebook/musicgen-melody"
+model_type = "musicgen"
+description = "Melody-conditioned generation"
+expected_size_gb = 3.5
+default_duration = 30
+max_duration = 60
+min_duration = 5
+tokens_per_second = 50
+enabled = true
+
+[ai.models.minimax-music3]
+hf_model_id = "MiniMaxAI/MiniMax-Music3"
+model_type = "minimax_music3"
+description = "Long-form lyrics-conditioned music generation"
+expected_size_gb = 24.0
+default_duration = 60
+max_duration = 300
+min_duration = 5
+tokens_per_second = 25
+enabled = true
+supports_lyrics = true
+requires_lyrics = true
+
+[ai.models.audioldm-s-full-v2]
+hf_model_id = "cvssp/audioldm-s-full-v2"
+model_type = "audioldm"
+description = "Sound effects and ambient audio"
+expected_size_gb = 1.5
+default_duration = 10
+max_duration = 30
+min_duration = 2
+tokens_per_second = 50
+enabled = true
+
+[ai.models.audioldm-s-full-v2.extra_params]
+num_inference_steps = 10
+guidance_scale = 2.5
+
+[ai.models.audioldm-l-full]
+hf_model_id = "cvssp/audioldm-l-full"
+model_type = "audioldm"
+description = "High-quality audio generation"
+expected_size_gb = 3.0
+default_duration = 10
+max_duration = 30
+min_duration = 2
+tokens_per_second = 50
+enabled = true
+
+[ai.models.audioldm-l-full.extra_params]
+num_inference_steps = 10
+guidance_scale = 2.5
+
+[ai.models.bark]
+hf_model_id = "suno/bark"
+model_type = "bark"
+description = "Speech synthesis and audio effects"
+expected_size_gb = 5.0
+default_duration = 10
+max_duration = 15
+min_duration = 2
+tokens_per_second = 50
+enabled = true
+
+[ai.models.bark-small]
+hf_model_id = "suno/bark-small"
+model_type = "bark"
+description = "Faster speech synthesis"
+expected_size_gb = 2.0
+default_duration = 10
+max_duration = 15
+min_duration = 2
+tokens_per_second = 50
+enabled = true
+
+[mood_radio_map]
+focus = "https://streams.ilovemusic.de/iloveradio17.mp3"
+happy = "https://streams.ilovemusic.de/iloveradio1.mp3"
+sad = "https://streams.ilovemusic.de/iloveradio5.mp3"
+excited = "https://streams.ilovemusic.de/iloveradio2.mp3"
+relaxed = "http://ice1.somafm.com/groovesalad-128-mp3"
+energetic = "http://ice1.somafm.com/defcon-128-mp3"
+melancholic = "http://ice1.somafm.com/indiepop-128-mp3"
+peaceful = "http://ice1.somafm.com/dronezone-128-mp3"
+
+[time_radio_map]
+morning = "https://streams.ilovemusic.de/iloveradio17.mp3"
+afternoon = "https://streams.ilovemusic.de/iloveradio1.mp3"
+evening = "https://streams.ilovemusic.de/iloveradio5.mp3"
+night = "https://streams.ilovemusic.de/iloveradio9.mp3"
